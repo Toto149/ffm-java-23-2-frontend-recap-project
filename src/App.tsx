@@ -35,7 +35,7 @@ function App() {
     }
   return (
     <>
-
+        <h1>Super Kaban Todo App</h1>
         <TodoGallery todos={todos}/>
         <footer>
             <form onSubmit={handleSubmit}>
