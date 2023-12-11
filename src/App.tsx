@@ -4,6 +4,7 @@ import './Todo.ts'
 import {Todo} from "./Todo.ts";
 import axios from "axios";
 import {Route, Routes} from "react-router";
+import TodoGallery from "./Pages/TodoGallery.tsx";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([])
@@ -20,16 +21,8 @@ function App() {
 
   return (
     <>
-        <div>
-            {todos.map(todo =>(
-                <div key={todo.id}>
-                    <h5>{todo.status}</h5>
-                    <p>
-                        {todo.description}
-                    </p>
-                </div>
-            ))}
-        </div>
+
+        <TodoGallery todos={todos}/>
     </>
   )
 }

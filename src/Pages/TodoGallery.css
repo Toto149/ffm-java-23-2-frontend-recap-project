@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: white;
+
+}
+.statusCard{
+    margin: 50px;
+    border: solid;
+    border-color: darkslateblue;
+    border-width: 1px;
+    background-color: #888888;
+    width: 300px;
+}
+h2 {
+  text-align: justify-all;
+    color: black;
+}
+.statusContainer{
+    border:solid;
+    border-color: #213547;
+}
