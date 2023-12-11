@@ -13,45 +13,51 @@ export default function TodoGallery(props: propTodos){
 
             <div class="statusContainer">
                 <h2>Open</h2>
-                <div className="statusCard">
+
             { props.todos.map(todo=> {
                 if (todo.status === "OPEN"){
-                    return <TodoCard key={todo.id} todo={todo}/>}
+                    return (<div className="statusCard">
+                        <TodoCard key={todo.id} todo={todo}/>
+                    </div>)}
                 else {
                     return null
                     }
                 }
                 )
             }
-                </div>
+
             </div>
             <div class="statusContainer">
                 <h2>In Progress</h2>
-                <div className="statusCard">
+
                 { props.todos.map(todo=> {
                         if (todo.status === "IN_PROGRESS"){
-                            return <TodoCard key={todo.id} todo={todo}/>}
+                            return (<div className="statusCard">
+                                <TodoCard key={todo.id} todo={todo}/>
+                            </div>)}
                         else {
                             return null
                         }
                     }
                 )
                 }
-                </div>
+
             </div>
             <div class="statusContainer">
                 <h2>Done</h2>
-                <div class="statusCard">
                 { props.todos.map(todo=> {
                         if (todo.status === "DONE"){
-                            return <TodoCard key={todo.id} todo={todo}/>}
+                            return (<div className="statusCard">
+                                <TodoCard key={todo.id} todo={todo}/>
+                            </div>
+                            )}
                         else {
                             return null
                         }
                     }
                 )
                 }
-                </div>
+
             </div>
         </div>
         </>
