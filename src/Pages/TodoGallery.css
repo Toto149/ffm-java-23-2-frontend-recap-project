@@ -3,7 +3,18 @@
     flex-wrap: nowrap;
     justify-content: space-around;
     background-color: white;
+    align-content: stretch;
+    align-self: stretch;
+}
 
+h2 {
+  text-align: justify-all;
+    color: black;
+}
+.statusContainer{
+    border:solid;
+    border-color: #213547;
+    width: 400px;
 }
 .statusCard{
     margin: 50px;
@@ -12,12 +23,4 @@
     border-width: 1px;
     background-color: #888888;
     width: 300px;
-}
-h2 {
-  text-align: justify-all;
-    color: black;
-}
-.statusContainer{
-    border:solid;
-    border-color: #213547;
 }

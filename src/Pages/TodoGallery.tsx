@@ -41,6 +41,7 @@ export default function TodoGallery(props: propTodos){
             </div>
             <div class="statusContainer">
                 <h2>Done</h2>
+                <div class="statusCard">
                 { props.todos.map(todo=> {
                         if (todo.status === "DONE"){
                             return <TodoCard key={todo.id} todo={todo}/>}
@@ -50,6 +51,7 @@ export default function TodoGallery(props: propTodos){
                     }
                 )
                 }
+                </div>
             </div>
         </div>
         </>
