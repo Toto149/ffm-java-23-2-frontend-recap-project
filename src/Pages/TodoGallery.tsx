@@ -1,5 +1,5 @@
 import {Todo} from "../Todo.ts";
-import TodoCard from "../TodoCard.tsx";
+import TodoCard from "../Components/TodoCard.tsx";
 import "./TodoGallery.css"
 
 export type propTodos = {

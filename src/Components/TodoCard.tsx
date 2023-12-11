@@ -1,4 +1,4 @@
-import {Todo} from "./Todo.ts";
+import {Todo} from "../Todo.ts";
 
 type propTodo = {
     todo: Todo
