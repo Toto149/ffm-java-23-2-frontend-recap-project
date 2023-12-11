@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useEffect, useState} from 'react'
 import './App.css'
+import './Todo.ts'
+import {Todo} from "./Todo.ts";
+import axios from "axios";
+import {Route, Routes} from "react-router";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState<Todo[]>([])
+
+    const fetchTodos = () => {
+        axios.get("/api/todo")
+            .then(response => setTodos(response.data))
+            .catch(err => alert(err.message));
+        console.log(todos)
+    }
+    useEffect(() => {
+        fetchTodos()
+    }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <div>
+            {todos.map(todo =>(
+                <div key={todo.id}>
+                    <h5>{todo.status}</h5>
+                    <p>
+                        {todo.description}
+                    </p>
+                </div>
+            ))}
+        </div>
     </>
   )
 }
